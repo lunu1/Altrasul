@@ -1,6 +1,6 @@
 import CountUp from "react-countup";
 import h1 from "../assets/images/aboutUs1.jpg";
-import h2 from "../assets/images/aboutUs2.jpg";
+
 
 const AboutUs = () => {
   return (

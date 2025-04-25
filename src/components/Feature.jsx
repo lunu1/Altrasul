@@ -1,9 +1,7 @@
-// "use client";
 import { useEffect, useRef } from "react";
-import EcosystemIcon from "../assets/icons/ecosystem.svg";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
-export const Feature = ({ title, description }) => {
+export const Feature = ({ title, description, Icon }) => {
   const border = useRef(null);
   const offsetX = useMotionValue(0);
   const offsetY = useMotionValue(0);
@@ -45,10 +43,10 @@ export const Feature = ({ title, description }) => {
       ></motion.div>
 
       <div
-        className="inline-flex h-14 w-14 bg-white  justify-center items-center rounded-lg"
-        aria-label="Ecosystem Icon"
+        className="inline-flex h-14 w-14 bg-white justify-center items-center rounded-lg"
+        aria-label={`${title} Icon`}
       >
-        <img src={EcosystemIcon} alt="Ecosystem Icon" />
+        <Icon className="text-red-600 text-3xl" />
       </div>
 
       <h3 className="mt-6 font-bold text-red-600">{title}</h3>
@@ -56,5 +54,3 @@ export const Feature = ({ title, description }) => {
     </div>
   );
 };
-
-// export default Feature; 

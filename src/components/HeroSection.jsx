@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Homebg1 from "../assets/images/Home1.jpg";
 import Homebg2 from "../assets/images/Home2.jpg";
-import Homebg3 from "../assets/images/Home3.jpg";
+import Homebg3 from "../assets/images/Hero.jpg";
+import { useNavigate } from "react-router-dom";
+
 
 const textAnimation = {
   hidden: { y: "100%", opacity: 0 },
@@ -30,6 +32,9 @@ const HeroSection = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  const navigate = useNavigate();
+
 
   return (
     <AnimatePresence mode="wait">
@@ -71,7 +76,9 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 1 }}
             variants={textAnimation}
           >
-            <button className="bg-red-600 hover:bg-red-700 text-white font-semibold text-sm sm:text-lg px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-md">
+            <button className="bg-red-600 hover:bg-red-700 text-white font-semibold text-sm sm:text-lg px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-md"
+            onClick={()=>navigate("/about")}
+            >
               Learn More About Us
             </button>
           </motion.div>

@@ -46,7 +46,7 @@ const Navbar = () => {
             </div>
             <div className="flex space-x-1 items-center">
               <Whatsapp height="1.3rem" width="1.3rem" />
-              <p className="text-xs text-red-600">+971 54 539 0080</p>
+              <p className="text-xs text-red-600">+971 56 410 0504</p>
             </div>
           </div>
 

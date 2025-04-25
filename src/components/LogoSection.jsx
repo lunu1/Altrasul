@@ -20,6 +20,8 @@ import Alogo8 from "../assets/images/Alogo8.webp";
 import Alogo9 from "../assets/images/Alogo9.webp";
 
 import { motion } from "framer-motion";
+import { TbMarquee } from "react-icons/tb";
+import Marquee from "react-fast-marquee";
 
 const images = [
   { src: microsoft, alt: " Logo" },
@@ -65,29 +67,32 @@ export const LogoTicker = () => {
         <h2 className="text-xl text-white/72 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-[#4d5eb3] ">
           Trusted by the world’s most innovative teams
         </h2>
+        
         <div className="overflow-hidden mt-9 relative flex items-center">
-          <button
+          {/* <button
             className="absolute left-0 z-10 bg-blue-400 text-black p-2 rounded-full"
             onClick={() => handleScroll("left")}
           >
             &#9664;
-          </button>
-          <div className="logo-container flex gap-8 w-full overflow-x-scroll no-scrollbar">
+          </button> */}
+          <div className="logo-container flex w-full overflow-hidden ">
+            <Marquee pauseOnHover>
             {images.map(({ src, alt }, index) => (
               <img
                 key={index}
                 src={src}
                 alt={alt}
-                className="flex-none h-24 w-auto sm:h-32 border px-4 py-4"
+                className="flex-none h-24 w-auto sm:h-32 border px-4 py-4 mx-5"
               />
             ))}
+            </Marquee>
           </div>
-          <button
+          {/* <button
             className="absolute right-0 z-10 bg-blue-400 text-black p-2 rounded-full"
             onClick={() => handleScroll("right")}
           >
             &#9654;
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
-export const Feature = ({ title, description, Icon }) => {
+export const Feature = ({ title, description, Icon , bgImage }) => {
   const border = useRef(null);
   const offsetX = useMotionValue(0);
   const offsetY = useMotionValue(0);
@@ -32,16 +32,24 @@ export const Feature = ({ title, description, Icon }) => {
   return (
     <div
       ref={border}
-      className="border border-white/30 text-center rounded-xl relative h-[300px] w-full flex items-center flex-col justify-center px-4 hover:bg-black/5"
+      className="relative border border-white/30 text-center rounded-xl relative h-[300px] w-full flex items-center flex-col justify-center px-4 hover:bg-black/5 overflow-hidden"
     >
+    <div
+        className="absolute inset-0 bg-cover bg-center blur-sm z-0"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      />
+
+      {/* Optional dark overlay for better text contrast */}
+      <div className="absolute inset-0 bg-black/40 z-0" />
+      
       <motion.div
-        className="absolute inset-0 border-2 border-red-400 rounded-xl"
+        className="absolute inset-0 border-2 border-red-400 rounded-xl z-10"
         style={{
           WebkitMaskImage: maskImage,
           maskImage,
         }}
       ></motion.div>
-
+      <div className="z-20">
       <div
         className="inline-flex h-14 w-14 bg-white justify-center items-center rounded-lg"
         aria-label={`${title} Icon`}
@@ -49,8 +57,9 @@ export const Feature = ({ title, description, Icon }) => {
         <Icon className="text-red-600 text-3xl" />
       </div>
 
-      <h3 className="mt-6 font-bold text-red-600">{title}</h3>
-      <p className="mt-2 text-white/70">{description}</p>
+      <h3 className="mt-6 font-bold text-red-400">{title}</h3>
+      <p className="mt-2 text-white">{description}</p>
+    </div>
     </div>
   );
 };

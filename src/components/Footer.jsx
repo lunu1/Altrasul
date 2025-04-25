@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
         <div className="flex-1 space-y-1 text-center lg:text-left">
           <h2 className="text-xl font-semibold">Contact Us</h2>
-          <p>Contact No.: +971 54 539 0080</p>
+          <p>Contact No. : +971 56 410 0504</p>
           <p>info@altrasul.net</p>
           <div className="flex justify-center lg:justify-start space-x-3">
             <a href="#" className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center">

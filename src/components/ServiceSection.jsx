@@ -1,36 +1,48 @@
 import { Feature } from "./Feature";
 import { FaBuilding, FaPassport, FaClipboardCheck, FaTrademark, FaCertificate, FaCalculator } from "react-icons/fa";
+import Business from "../assets/images/business.jpg"
+import Visa from "../assets/images/visa.jpg"
+import Services from "../assets/images/service.jpg"
+import Trademark from "../assets/images/trademark.jpg"
+import Certificate from "../assets/images/certificate.jpg"
+import Tax from "../assets/images/tax.jpg"
 
 const features = [
   {
     title: "Business SetUp",
     description: "Professional assistance for incorporating your business in the UAE.",
     icon: FaBuilding,
+    bgImage:Business,
   },
   {
     title: "UAE Visa Services",
     description: "Simplified and hassle-free visa applications and renewals.",
     icon: FaPassport,
+    bgImage:Visa,
   },
   {
     title: "PRO Services",
     description: "Efficient handling of government documentation and processes.",
     icon: FaClipboardCheck,
+    bgImage:Services,
   },
   {
     title: "Trademark Services",
     description: "Secure your brand with expert trademark registration services.",
     icon: FaTrademark,
+    bgImage:Trademark,
   },
   {
     title: "Certificate Attestation",
     description: "Proper legalization of documents for official use.",
     icon: FaCertificate,
+    bgImage:Certificate,
   },
   {
     title: "Tax & Accounting",
     description: "End-to-end tax and accounting solutions tailored to your business needs.",
     icon: FaCalculator,
+    bgImage:Tax,
   },
 ];
 
@@ -51,8 +63,8 @@ export const Service = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3 sm:flex-1">
-        {features.map(({ title, description, icon: Icon }, index) => (
-          <Feature key={index} title={title} description={description} Icon={Icon} />
+        {features.map(({ title, description, icon: Icon,bgImage }, index) => (
+          <Feature key={index} title={title} description={description} Icon={Icon} bgImage={bgImage}/>
         ))}
       </div>
     </div>
